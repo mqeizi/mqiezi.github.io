@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<script type="text/javascript">
+	var agent=window.navigator.userAgent;
+	var wrapper=document.createElement('div');
+    wrapper.innerHTML=agent;
+    document.body.appendChild(wrapper);
+    
+    var browser = {
+        versions: function () {
+            var u = navigator.userAgent;
+            return {
+                //移动终端浏览器版本信息
+                //IE内核
+                trident: u.indexOf('Trident') > -1,
+                //opera内核
+                presto: u.indexOf('Presto') > -1,
+                //苹果、谷歌内核
+                webKit: u.indexOf('AppleWebKit') > -1,
+                //火狐内核
+                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,
+                //是否为移动终端
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/),
+                //iOS 设备
+                iOS: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                //iOS 版本
+                iOSVersion: navigator.userAgent.match(/([0-9]+)_([0-9]+)(_([0-9]+))*/)[0].replace(/_/g,"."),
+                //android终端或者uc浏览器
+                android: u.indexOf('Android') > -1,
+                //是否为iPhone
+                iPhone: u.indexOf('iPhone') > -1,
+                //是否iPad
+                iPad: u.indexOf('iPad') > -1,
+                //是否Mac
+                mac: u.indexOf('Macintosh')>-1,
+                //是否web应该程序，没有头部与底部
+                webApp: u.indexOf('Safari') == -1,
+               
+            };
+        } (),
+        language: (navigator.browserLanguage || navigator.language).toLowerCase()
+    }
+                            
+                               
+   document.write("<br />");
+   document.writeln(" 系统版本: " + browser.versions.iOSVersion);
+   document.write("<br />");
+   document.writeln(" 语言版本: " + browser.language);
+   document.write("<br />");
+   document.writeln(" 是否为移动终端: " + browser.versions.mobile);
+   document.write("<br />");
+   document.writeln(" 是否为iOS终端: " + browser.versions.iOS);
+   document.write("<br />");
+   document.writeln(" 是否为android终端: " + browser.versions.android);
+   document.write("<br />");
+   document.writeln(" 是否为iPhone: " + browser.versions.iPhone);
+   document.write("<br />");
+   document.writeln(" 是否为iPad: " + browser.versions.iPad);
+   document.write("<br />");
+   document.writeln(" 是否为Mac " + browser.versions.mac);
+   document.write("<br />");
+
+</script>
+</body>
+</html>
