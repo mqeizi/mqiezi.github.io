@@ -1,6 +1,6 @@
   
 
-#![mqiezi](./images/icon.png) 
+![mqiezi](./images/icon.png) 
 
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/mqiezi/CornerstoneBC/blob/master/MIT-LICENSE)
 
